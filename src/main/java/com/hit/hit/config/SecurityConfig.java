@@ -34,6 +34,7 @@ public class SecurityConfig{
                 .and()
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/auth").permitAll()
+                        .requestMatchers("/register").permitAll()
                         .requestMatchers("/auth/getUser/**").hasAnyAuthority("ROLE_ADMIN")
                         .requestMatchers("/visitor/**").hasAnyAuthority("ROLE_ADMIN", "ROLE_USER")
                         .requestMatchers("/gates/**").hasAnyAuthority("ROLE_ADMIN", "ROLE_USER")
