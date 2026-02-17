@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface GatesRepository extends JpaRepository<Gates, Integer> {
+public interface GatesRepository extends JpaRepository<Gates, Long> {
 }

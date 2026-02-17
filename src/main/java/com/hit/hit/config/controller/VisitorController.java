@@ -32,7 +32,7 @@ public class VisitorController {
     }
 
     @GetMapping("/get-by-id/{id}")
-    public Optional<Visitor> getAll(Integer id){
+    public Optional<Visitor> getAll(long id){
         return visitorService.getVisitor(id);
     }
 

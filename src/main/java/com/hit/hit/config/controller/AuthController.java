@@ -41,12 +41,6 @@ public class AuthController {
         }
     }
 
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
-    @GetMapping("/auth/getUser/{userName}")
-    public Optional<User> getUserDetails(@PathVariable String userName){
-        return authService.getUserDetails(userName);
-    }
-
     @GetMapping("/users/get-all")
     public List<User> getUserDetails(){
         return authService.getAllUsers();

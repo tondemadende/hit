@@ -24,7 +24,7 @@ public class VisitorService {
         return visitorRepository.findAll();
     }
 
-    public Optional<Visitor> getVisitor(Integer id) {
+    public Optional<Visitor> getVisitor(Long id) {
         return visitorRepository.findById(id);
     }
 }

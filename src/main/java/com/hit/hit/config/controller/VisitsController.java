@@ -2,7 +2,9 @@ package com.hit.hit.config.controller;
 
 
 import com.hit.hit.config.service.VisitorService;
+import com.hit.hit.config.service.VisitsService;
 import com.hit.hit.model.Visitor;
+import com.hit.hit.model.Visits;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,21 +21,28 @@ public class VisitsController {
     private static final Logger log = LoggerFactory.getLogger(VisitsController.class);
 
     @Autowired
-    private VisitorService visitorService;
+    private VisitsService visitsService;
 
 
     @PostMapping("/save")
-    public Visitor save(@RequestBody Visitor visitor){
-        return visitorService.save(visitor);
+    public Visits save(@RequestBody Visits visitor){
+        return visitsService.save(visitor);
     }
 
     @GetMapping("/get-all")
-    public List<Visitor> getAll(){
-        return visitorService.getAllVisitors();
+    public List<Visits> getAll(){
+        return visitsService.getAllVisits();
     }
 
     @GetMapping("/get-by-id/{id}")
-    public Optional<Visitor> getAll(Integer id){
-        return visitorService.getVisitor(id);
+    public Optional<Visits> getAll(Long id){
+        return visitsService.getVisitor(id);
     }
+
+    @PostMapping("/checkout")
+    public Visits checkout(@RequestBody Visits visitor){
+        return visitsService.checkout(visitor);
+    }
+
+
 }
