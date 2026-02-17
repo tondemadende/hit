@@ -27,4 +27,16 @@ public class VisitorService {
     public Optional<Visitor> getVisitor(Long id) {
         return visitorRepository.findById(id);
     }
+
+    public List<Visitor> getByFname(String name){
+        return visitorRepository.findVisitorByFirstName(name);
+    }
+
+    public List<Visitor> getByLname(String name){
+        return visitorRepository.findVisitorByLastName(name);
+    }
+
+    public List<Visitor> getByNationalId(String name){
+        return visitorRepository.findVisitorByNationalId(name);
+    }
 }

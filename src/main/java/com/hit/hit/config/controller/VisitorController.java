@@ -3,6 +3,7 @@ package com.hit.hit.config.controller;
 
 import com.hit.hit.config.service.VisitorService;
 import com.hit.hit.model.Visitor;
+import com.hit.hit.model.Visits;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,21 @@ public class VisitorController {
     @GetMapping("/get-by-id/{id}")
     public Optional<Visitor> getAll(long id){
         return visitorService.getVisitor(id);
+    }
+
+    @GetMapping("/get-by-fname/{name}")
+    public List<Visitor> getAllByFirstname(@PathVariable String name){
+        return visitorService.getByFname(name);
+    }
+
+    @GetMapping("/get-by-lname/{name}")
+    public List<Visitor> getAllByLastname(@PathVariable String name){
+        return visitorService.getByLname(name);
+    }
+
+    @GetMapping("/get-by-lname/{name}")
+    public List<Visitor> getAllByNationalId(@PathVariable String name){
+        return visitorService.getByNationalId(name);
     }
 
 
