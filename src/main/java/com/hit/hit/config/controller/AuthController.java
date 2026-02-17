@@ -3,15 +3,13 @@ package com.hit.hit.config.controller;
 import com.hit.hit.config.service.AuthService;
 import com.hit.hit.model.AuthRequest;
 import com.hit.hit.model.AuthResponse;
-import com.hit.hit.model.User;
+import com.hit.hit.model.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
-import java.util.Optional;
 
 @CrossOrigin
 @RestController
@@ -32,7 +30,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> registerUser(@RequestBody User authRequest) {
+    public ResponseEntity<String> registerUser(@RequestBody Users authRequest) {
         try {
             authService.registerUser(authRequest.getUsername(), authRequest.getPassword(), authRequest.getFirstName(), authRequest.getLastName(), authRequest.getRole());
             return ResponseEntity.ok("User registered successfully");
@@ -42,7 +40,7 @@ public class AuthController {
     }
 
     @GetMapping("/users/get-all")
-    public List<User> getUserDetails(){
+    public List<Users> getUserDetails(){
         return authService.getAllUsers();
     }
 

@@ -22,8 +22,9 @@ public class Visits {
     private Date checkedOutAt;
     @Column(nullable = false)
     private String passCode;
-    @Column(nullable = false, name = "user_id")
-    private String createdBy;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private Visitor createdBy;
 
     public Long getId() {
         return id;
@@ -73,11 +74,11 @@ public class Visits {
         this.passCode = passCode;
     }
 
-    public String getCreatedBy() {
+    public Visitor getCreatedBy() {
         return createdBy;
     }
 
-    public void setCreatedBy(String createdBy) {
+    public void setCreatedBy(Visitor createdBy) {
         this.createdBy = createdBy;
     }
 }

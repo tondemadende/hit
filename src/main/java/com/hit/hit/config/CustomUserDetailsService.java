@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import com.hit.hit.model.User;
+import com.hit.hit.model.Users;
 
 
 @Service
@@ -21,7 +21,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         // Implement your user fetching logic here
         // For example, fetching from a database
 //        return null; // Replace with actual UserDetails object
-        User user = userRepository.findByUsername(username)
+        Users user = userRepository.findByUsername(username)
                 .orElseThrow(() ->
                         new UsernameNotFoundException("User not found"));
 

@@ -2,7 +2,7 @@ package com.hit.hit.config.service;
 
 import com.hit.hit.Repository.UserRepository;
 import com.hit.hit.config.JwtUtil;
-import com.hit.hit.model.User;
+import com.hit.hit.model.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -48,7 +48,7 @@ public class AuthService {
             throw new Exception("Username already exists");
         }
 
-        User user = new User();
+        Users user = new Users();
         user.setUsername(username);
         user.setPassword(passwordEncoder.encode(password)); // Hash the password
         user.setFirstName(firstName);
@@ -58,11 +58,11 @@ public class AuthService {
         userRepository.save(user);
     }
 
-    public Optional<User> getUserDetails(String username){
+    public Optional<Users> getUserDetails(String username){
         return userRepository.findByUsername(username);
     }
 
-    public List<User> getAllUsers(){
+    public List<Users> getAllUsers(){
         return userRepository.findAll();
     }
 }
