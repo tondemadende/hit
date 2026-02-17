@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 
 @Entity
-public class Visitor {
+public class Visitors {
 
 
     @Id

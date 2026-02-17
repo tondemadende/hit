@@ -1,9 +1,7 @@
 package com.hit.hit.config.controller;
 
 
-import com.hit.hit.config.service.VisitorService;
 import com.hit.hit.config.service.VisitsService;
-import com.hit.hit.model.Visitor;
 import com.hit.hit.model.Visits;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

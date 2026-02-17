@@ -2,8 +2,7 @@ package com.hit.hit.config.controller;
 
 
 import com.hit.hit.config.service.VisitorService;
-import com.hit.hit.model.Visitor;
-import com.hit.hit.model.Visits;
+import com.hit.hit.model.Visitors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,17 +22,17 @@ public class VisitorController {
 
 
     @PostMapping("/save")
-    public Visitor save(@RequestBody Visitor visitor){
-        return visitorService.save(visitor);
+    public Visitors save(@RequestBody Visitors visitors){
+        return visitorService.save(visitors);
     }
 
     @GetMapping("/get-all")
-    public List<Visitor> getAll(){
+    public List<Visitors> getAll(){
         return visitorService.getAllVisitors();
     }
 
     @GetMapping("/get-by-id/{id}")
-    public Optional<Visitor> getAll(long id){
+    public Optional<Visitors> getAll(long id){
         return visitorService.getVisitor(id);
     }
 

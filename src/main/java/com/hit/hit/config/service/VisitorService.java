@@ -1,9 +1,7 @@
 package com.hit.hit.config.service;
 
-import com.hit.hit.Repository.GatesRepository;
 import com.hit.hit.Repository.VisitorRepository;
-import com.hit.hit.model.Gates;
-import com.hit.hit.model.Visitor;
+import com.hit.hit.model.Visitors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,15 +14,15 @@ public class VisitorService {
     @Autowired
     private VisitorRepository visitorRepository;
 
-    public Visitor save(Visitor visitor){
-        return visitorRepository.save(visitor);
+    public Visitors save(Visitors visitors){
+        return visitorRepository.save(visitors);
     }
 
-    public List<Visitor> getAllVisitors() {
+    public List<Visitors> getAllVisitors() {
         return visitorRepository.findAll();
     }
 
-    public Optional<Visitor> getVisitor(Long id) {
+    public Optional<Visitors> getVisitor(Long id) {
         return visitorRepository.findById(id);
     }
 

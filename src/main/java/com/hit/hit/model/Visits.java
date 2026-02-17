@@ -24,7 +24,7 @@ public class Visits {
     private String passCode;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    private Visitor createdBy;
+    private Visitors createdBy;
 
     public Long getId() {
         return id;
@@ -74,11 +74,11 @@ public class Visits {
         this.passCode = passCode;
     }
 
-    public Visitor getCreatedBy() {
+    public Visitors getCreatedBy() {
         return createdBy;
     }
 
-    public void setCreatedBy(Visitor createdBy) {
+    public void setCreatedBy(Visitors createdBy) {
         this.createdBy = createdBy;
     }
 }
