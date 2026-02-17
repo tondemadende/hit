@@ -10,9 +10,9 @@ import java.util.List;
 @Repository
 public interface VisitorRepository extends JpaRepository<Visitor, Long> {
 
-    List<Visitor> findVisitorByFirstName(String name);
-
-    List<Visitor> findVisitorByLastName(String name);
-
-    List<Visitor> findVisitorByNationalId(String name);
+//    List<Visitor> findVisitorByFirstName(String name);
+//
+//    List<Visitor> findVisitorByLastName(String name);
+//
+//    List<Visitor> findVisitorByNationalId(String name);
 }

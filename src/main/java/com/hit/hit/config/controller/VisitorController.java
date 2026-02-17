@@ -37,20 +37,20 @@ public class VisitorController {
         return visitorService.getVisitor(id);
     }
 
-    @GetMapping("/get-by-fname/{name}")
-    public List<Visitor> getAllByFirstname(@PathVariable String name){
-        return visitorService.getByFname(name);
-    }
-
-    @GetMapping("/get-by-lname/{name}")
-    public List<Visitor> getAllByLastname(@PathVariable String name){
-        return visitorService.getByLname(name);
-    }
-
-    @GetMapping("/get-by-lname/{name}")
-    public List<Visitor> getAllByNationalId(@PathVariable String name){
-        return visitorService.getByNationalId(name);
-    }
+//    @GetMapping("/get-by-fname/{name}")
+//    public List<Visitor> getAllByFirstname(@PathVariable String name){
+//        return visitorService.getByFname(name);
+//    }
+//
+//    @GetMapping("/get-by-lname/{name}")
+//    public List<Visitor> getAllByLastname(@PathVariable String name){
+//        return visitorService.getByLname(name);
+//    }
+//
+//    @GetMapping("/get-by-lname/{name}")
+//    public List<Visitor> getAllByNationalId(@PathVariable String name){
+//        return visitorService.getByNationalId(name);
+//    }
 
 
 }

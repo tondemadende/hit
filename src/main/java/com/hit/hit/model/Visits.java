@@ -11,18 +11,18 @@ public class Visits {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(nullable = false)
     private String visitorId;
-
+    @Column(nullable = false)
     private String gateId;
-
+    @Column(nullable = false)
     private Date checkedInAt;
 
     @Column(nullable = true)
     private Date checkedOutAt;
-
+    @Column(nullable = false)
     private String passCode;
-
+    @Column(nullable = false, name = "user_id")
     private String createdBy;
 
     public Long getId() {
